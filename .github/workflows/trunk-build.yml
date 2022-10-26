@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  setup:
+  setup-and-build:
     name: setup
     runs-on: ubuntu-latest
     steps:
@@ -20,10 +20,6 @@ jobs:
         run: cargo install trunk
       - name: add wasm32-unkown-unkown target
         run: rustup target add wasm32-unknown-unknown
-  build:
-    name: build
-    runs-on: ubuntu-latest
-    steps:
       - name: trunk build
         run: trunk build --release
 
