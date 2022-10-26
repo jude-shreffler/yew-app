@@ -1,9 +1,8 @@
 name: trunk-build
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - chron: '0 0 * * *'
 
 jobs:
   setup:
