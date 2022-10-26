@@ -5,12 +5,12 @@ on:
     - chron: '0 0 * * *'
 
 jobs:
-  setup:
+  setup-and-build:
     name: setup
     runs-on: ubuntu-latest
     steps:
       - name: download rust
-        run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+        run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
       - name: setup env variable
         env:
           PATH: ~/.cargo/bin
@@ -19,10 +19,6 @@ jobs:
         run: cargo install trunk
       - name: add wasm32-unkown-unkown target
         run: rustup target add wasm32-unknown-unknown
-  build:
-    name: build
-    runs-on: ubuntu-latest
-    steps:
       - name: trunk build
         run: trunk build --release
 
