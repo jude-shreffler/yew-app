@@ -1,3 +1,5 @@
+name: trunk-build
+
 on:
   push:
     branches:
