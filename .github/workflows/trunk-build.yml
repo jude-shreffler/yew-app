@@ -13,6 +13,7 @@ jobs:
       - name: setup env variable
         env:
           PATH: ~/.cargo/bin
+        run: echo setting path
       - name: download trunk
         run: cargo install trunk
       - name: add wasm32-unkown-unkown target
