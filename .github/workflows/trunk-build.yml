@@ -11,14 +11,10 @@ jobs:
     steps:
       - name: download rust
         run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-      - name: setup env variable
-        env:
-          PATH: ~/.cargo/bin
-        run: echo setting path
       - name: download trunk
         run: cargo install trunk
       - name: add wasm32-unkown-unkown target
         run: rustup target add wasm32-unknown-unknown
       - name: trunk build
-        run: trunk build --release
+        run: ~/.cargo/bin/trunk build --release
 
