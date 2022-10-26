@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: download rust
-        run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+        run: curl -y --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
       - name: download trunk
         run: cargo install trunk
       - name: add wasm32-unkown-unkown target
